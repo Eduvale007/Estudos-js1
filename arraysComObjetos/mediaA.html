@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<h1>informacoes alunos</h1>
+
+
+<ul id="listaAlunos">
+    <!-- <li>Eduardo
+        <ul>
+            <li>1</li>
+            <li>3</li>
+            <li>3</li>
+            <li>8</li>
+        </ul>
+    </li>
+
+
+    <li>Maria
+        <ul>
+            <li>10</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+    </li> -->
+</ul>
+
+<script>
+
+const alunos = [
+    {nome: "Eduardo", notas:[1,3,3,8]},
+    {nome: "Maria", notas:[10,7,9,8]},
+    {nome: "João", notas:[10,6,3,0]}
+]
+
+
+const listaAlunos = document.getElementById("listaAlunos")
+let alunoHTML = ""
+
+for(let i = 0; i < alunos.length; i ++){
+    alunoHTML += "<li>" + alunos[i].nome
+    alunoHTML += "<ul>"
+        for(let j = 0; j < alunos[i].notas.length; j++){
+            alunoHTML += "<li>" + alunos[i].notas[j] + "</li>"
+        }
+    alunoHTML += "</ul>"
+    alunoHTML += "</li>"
+}
+
+listaAlunos.innerHTML = alunoHTML
+</script>
+</body>
+</html>

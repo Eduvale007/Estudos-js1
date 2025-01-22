@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<label>RAIO
+    <input type="number" id="raio">
+</label>   
+
+    <button onclick="MostrarCircunferencia()">Mostrar Circunferencia</button>
+    <br>
+    <output id="output"></output>
+    
+    <script>
+
+
+const raio = document.getElementById("raio")
+const output = document.getElementById("output")
+
+
+function MostrarCircunferencia(){
+    let raioValue = raio.value
+    const pi = Math.PI
+
+    let area = pi * Math.pow(raioValue,2)
+
+    output.innerHTML =  " AREA = " + area.toFixed(2)
+}
+
+
+    </script>
+    
+</body>
+</html>

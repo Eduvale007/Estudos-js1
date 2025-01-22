@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+const produto = {
+    nome: "caneta",
+    quantidade: 10,
+    comprar: function(n){
+        if(n > this.quantidade){
+            console.log("quantidade insuficiente, quantidade em estoque é de ", this.quantidade)
+            return null
+        }
+
+        this.quantidade -= n
+    }
+}
+
+produto.comprar(4)
+
+console.log(produto.quantidade)
+
+
+    </script>
+    
+</body>
+</html>
