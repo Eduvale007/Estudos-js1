@@ -6,3 +6,6 @@ let soma = 0
 const pares = numeros.filter(numeros => numeros % 2 === 0)
 pares.forEach(pares => soma+=pares )
 console.log(soma)
+
+const menor = numeros.filter(numeros => numeros < 5)
+menor.forEach(numeros => console.log(numeros))
