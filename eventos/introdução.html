@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event</h1>
+    <div id="container">
+    <button id="btn1"> botão 1</button>
+    <button id="btn2">botão  2</button>
+    <button id="btn3"> botão 3</button>
+</div>
+<hr>
+<h1>Delegação de eventos</h1>
+<div class="container2">
+    <button>botao 1</button>
+    <button>botao 2</button>
+    <button>botao 3</button>
+</div>
+</body>
+
+<script>
+    
+const btn1 = document.getElementById("btn1")
+const btn2 = document.getElementById("btn2")
+const btn3= document.getElementById("btn3")
+
+
+function clicou(){
+    console.log("click btn1 funcao anonima")
+}
+
+btn1.onclick = function(){
+    console.log("click btn1 funcao anonima")
+}
+
+
+btn1.onclick = clicou
+
+btn2.addEventListener("click", clicou)
+
+btn2.addEventListener("click", function(){
+    console.log("click funcao anonima")
+})
+
+
+
+btn3.addEventListener("click", function(event){
+    console.log(event)
+    event.stopPropagation()
+    console.log("click no btn3")
+},false)
+
+document.addEventListener("click", function(){
+    console.log("clicou no document")
+})
+
+const container = document.getElementById("container")
+container.addEventListener("click", function(){
+    console.log("clicou no container")
+},false)
+
+
+const container2 = document.querySelector(".container2")
+const btns = document.querySelectorAll(".container2 button")
+
+</script>
+</html>
